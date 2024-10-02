@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp/pages/dashboard/dashboard_page.dart';
 
 import '../../new_chat.dart';
 
@@ -10,7 +9,6 @@ class ChatsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        // Use SingleChildScrollView here
         padding: const EdgeInsets.all(18.0),
         child: Column(
           children: [
@@ -60,7 +58,7 @@ class ChatsPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Icon(Icons.add_box_rounded),
+        child: Icon(Icons.add_box_rounded,color: Colors.white,),
         backgroundColor:
             Colors.green,
       ),

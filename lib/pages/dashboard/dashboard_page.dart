@@ -4,7 +4,6 @@ import 'package:whatsapp/pages/dashboard/chats/chats_page.dart';
 import 'package:whatsapp/pages/dashboard/communities/communities_page.dart';
 import 'package:whatsapp/pages/dashboard/updates/updates_page.dart';
 import 'package:whatsapp/utilities/app_colors.dart';
-import 'package:whatsapp/utilities/app_sizes.dart';
 import 'package:whatsapp/utilities/app_strings.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -53,52 +52,60 @@ class _DashboardPageState extends State<DashboardPage> {
             ? AppStrings.updates
             : _currentIndex == 2
             ? AppStrings.communities
-            : AppStrings.calls),
+            : AppStrings.calls,
+          style: TextStyle(
+            color: _currentIndex == 0 ? Colors.green : Colors.black,
+            fontWeight: _currentIndex == 0 ? FontWeight.w700 : FontWeight.normal, // केवल index 0 के लिए वज़न बदलें
+          ),
+
+
+        ),
         actions: _appBarActions[_currentIndex], // Icons set karna
       ),
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
-        selectedItemColor: AppColors.mainColor,
-        unselectedItemColor: AppColors.mainColor,
-        unselectedLabelStyle: const TextStyle(color: AppColors.mainColor),
+        selectedItemColor: Colors.green,
+        unselectedItemColor: Colors.black,
+        unselectedLabelStyle: TextStyle(color: Colors.red),
         onTap: (index) {
           setState(() {
             _currentIndex = index;
           });
         },
-        items: const [
+        items: [
           BottomNavigationBarItem(
             icon: Icon(
               Icons.chat,
-              color: AppColors.mainColor,
+              color: _currentIndex == 0 ? AppColors.mainColor : Colors.grey, // सक्रिय टैब के लिए रंग
             ),
             label: AppStrings.chats,
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.update,
-              color: AppColors.mainColor,
+              color: _currentIndex == 1 ? AppColors.mainColor : Colors.grey,
             ),
             label: AppStrings.updates,
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.group,
-              color: AppColors.mainColor,
+              color: _currentIndex == 2 ? AppColors.mainColor : Colors.grey,
             ),
             label: AppStrings.communities,
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.call,
-              color: AppColors.mainColor,
+              color: _currentIndex == 3 ? AppColors.mainColor : Colors.grey,
             ),
             label: AppStrings.calls,
           ),
         ],
         showUnselectedLabels: true,
       ),
+
     );
   }
 }
