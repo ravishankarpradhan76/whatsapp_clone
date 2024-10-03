@@ -33,6 +33,7 @@ List<String>sampleImage = [
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjFCBcHkS5CvGsBCQLf49T28GUrbyOS2b8gg&s',
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbaiqCPaLjyR2_hMv5cRRIO3VAdsn0uN2j-g&s'
 ];
+
 List<String> sampleMessages = [
   'Hey, how are you?',
   'Let’s meet tomorrow.',

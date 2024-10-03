@@ -101,9 +101,7 @@ class UpdatesPage extends StatelessWidget {
             bottom: 80, // Pehle button ki position
             right: 16,
             child: FloatingActionButton(
-              onPressed: () {
-                // Edit action
-              },
+              onPressed: () {},
               child: Icon(Icons.edit),
               backgroundColor: Colors.white70,
             ),

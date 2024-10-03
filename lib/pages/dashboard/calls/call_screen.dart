@@ -10,18 +10,17 @@ List<String> sampleUsernames = [
   'Kaushiki',
   'Suman',
   'Gollu',
-  'soya',
-  'Payal',
-  'Leo',
-  'Mia',
-  'Nina',
-  'Oscar',
-  'Paul',
-  'Quincy',
-  'Rachel',
-  'Satya',
-  'Tina',
-  'Uma',
+];
+List<String>sampleImage = [
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-7UlBEPogPlRsSxdRuYzA82H6s2Vklnn4sg&s',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJaGXVgW_R8q1ImPgNG9qox0l7v8MYosxr6g&s',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjFCBcHkS5CvGsBCQLf49T28GUrbyOS2b8gg&s',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLcgJVt5scftlAOHVsywM8MGi-y_ztOvbofg&s',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShWxZ32gY0-b-p2RTZoXDwJe0uYGIHMjYFOw&s',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjFCBcHkS5CvGsBCQLf49T28GUrbyOS2b8gg&s',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlSd4rBD3TpplIVUYUj8zoGVkJgXzRObUmYQ&s',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjFCBcHkS5CvGsBCQLf49T28GUrbyOS2b8gg&s',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbaiqCPaLjyR2_hMv5cRRIO3VAdsn0uN2j-g&s'
 ];
 
 class CallList extends StatelessWidget {
@@ -35,9 +34,7 @@ class CallList extends StatelessWidget {
           return ListTile(
             contentPadding: EdgeInsets.zero,
             leading: CircleAvatar(
-              backgroundImage: NetworkImage('https://encrypted'
-                  '-tbn0.gstatic.com/images?q=tbn:ANd9GcQLtJcTmO0H'
-                  'rXUfekzgb3ZUTIFLGCzKlwMRWw&s'),
+              backgroundImage: NetworkImage(sampleImage[index]),
               radius: 24,
             ),
             title: Text(sampleUsernames[index],style: TextStyle(fontWeight: FontWeight.w500,fontSize: 16,color: Colors.black87),),
