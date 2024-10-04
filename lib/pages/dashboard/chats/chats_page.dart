@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../new_chat.dart';
+import '../select_contact/select_contact.dart';
 
 class ChatsPage extends StatelessWidget {
   const ChatsPage({super.key});
@@ -57,10 +58,15 @@ class ChatsPage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.add_box_rounded,color: Colors.white,),
-        backgroundColor:
-            Colors.green,
+        onPressed: () {
+          // Navigate to the NewContactPage
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SelectContact()),
+          );
+        },
+        child: Icon(Icons.add_box_rounded, color: Colors.white),
+        backgroundColor: Colors.green,
       ),
     );
   }

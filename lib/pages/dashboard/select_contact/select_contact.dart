@@ -51,11 +51,14 @@ class SelectContact extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white70,
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
-          Column(
+        appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
@@ -63,16 +66,22 @@ class SelectContact extends StatelessWidget {
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
               ),
               Text(
-                '229 contact',
+                '229 contacts', // Corrected "contact" to "contacts"
                 style: TextStyle(fontSize: 13),
               ),
             ],
           ),
-          SizedBox(width: 105),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert)),
-        ],
-      ),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.search),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.more_vert),
+            ),
+          ],
+        ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(18.0),
         child: Column(

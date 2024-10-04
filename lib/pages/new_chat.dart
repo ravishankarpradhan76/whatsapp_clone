@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-List<String>sampleUsernames =[
+import 'dashboard/chats/chat_details.dart';
+
+List<String> sampleUsernames = [
   'Chandu',
   'Ravi',
   'Somya',
@@ -11,7 +13,7 @@ List<String>sampleUsernames =[
   'Laxman',
   'Mohan'
 ];
-List<String>sampleList = [
+List<String> sampleList = [
   '12:33 AM',
   '11:03 AM',
   '12:03 AM',
@@ -22,7 +24,7 @@ List<String>sampleList = [
   '12:03 AM',
   'Yesterday'
 ];
-List<String>sampleImage = [
+List<String> sampleImage = [
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-7UlBEPogPlRsSxdRuYzA82H6s2Vklnn4sg&s',
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJaGXVgW_R8q1ImPgNG9qox0l7v8MYosxr6g&s',
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjFCBcHkS5CvGsBCQLf49T28GUrbyOS2b8gg&s',
@@ -33,7 +35,6 @@ List<String>sampleImage = [
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjFCBcHkS5CvGsBCQLf49T28GUrbyOS2b8gg&s',
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbaiqCPaLjyR2_hMv5cRRIO3VAdsn0uN2j-g&s'
 ];
-
 List<String> sampleMessages = [
   'Hey, how are you?',
   'Let’s meet tomorrow.',
@@ -45,6 +46,7 @@ List<String> sampleMessages = [
   'I’m running late.',
   'What’s your plan for the weekend?'
 ];
+
 class ChatScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -62,13 +64,24 @@ class ChatScreen extends StatelessWidget {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(sampleUsernames[index], style: TextStyle(fontWeight: FontWeight.w600),),
-              Text(sampleList[index],style: TextStyle(fontSize: 11),),
+              Text(sampleUsernames[index], style: TextStyle(fontWeight: FontWeight.w600)),
+              Text(sampleList[index], style: TextStyle(fontSize: 11)),
             ],
           ),
           subtitle: Text(sampleMessages[index]),
+          onTap: () {
+            // Navigate to ChatDetailScreen on tap
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ChatDetailScreen(username: sampleUsernames[index]),
+              ),
+            );
+          },
         );
       },
     );
   }
 }
+
+
