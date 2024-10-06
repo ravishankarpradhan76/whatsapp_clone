@@ -41,16 +41,9 @@ class AudioCall extends StatelessWidget {
   }
 
   Widget _buildCircleAvatar(IconData icon, [Color? backgroundColor]) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.black54
-      ),
-      width: 60, // Width सेट करें
-      height: 60, // Height सेट करें
-      child: CircleAvatar(
+    return CircleAvatar(
         backgroundColor: backgroundColor ?? Colors.blueGrey[700],
         child: Icon(icon, color: Colors.white, size: 24), // आइकन का साइज सेट करें
-      ),
     );
   }
 }
