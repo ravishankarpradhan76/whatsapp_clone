@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/pages/dashboard/chats/new_group.dart';
 import 'package:whatsapp/pages/dashboard/dashboard_page.dart';
 import 'package:whatsapp/pages/dashboard/splash_screen/splash_screen.dart';
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: AudioCall(),
+      home: NewGroup(),
     );
   }
 }
